@@ -29,6 +29,12 @@ export default {
         options: []
       }
     }
+  },
+  methods: {
+    addPoll() {
+      // TODO: Add some input validation checkers
+      // TODO: Add Poll the the vuex store
+    }
   }
 }
 </script>

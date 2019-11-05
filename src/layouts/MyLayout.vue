@@ -15,7 +15,7 @@
           Poll App
         </q-toolbar-title>
         <q-btn 
-          @click="addPoll" 
+          @click="showAddPoll = true"
           push color="white" 
           text-color="primary" 
           label="Add Poll" />
@@ -70,12 +70,6 @@ export default {
     }
   },
   methods: {
-    addPoll() {
-      // TODO: Some input validations required
-      // TODO: Add poll to the vuex store
-      this.showAddPoll = true
-      this.optionsCount = 2
-    }
   }
 }
 </script>
