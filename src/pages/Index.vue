@@ -5,13 +5,13 @@
       v-for="poll in polls"
       :key="poll.id"
       :id="poll.id"
-      :question="poll.question" 
-      :creator="poll.creator" 
+      :question="poll.question"
+      :creator="poll.creator"
       :options="poll.options">
     </poll>
-    
+
     <q-dialog v-model="alert">
-      <q-card>
+      <q-card style="width: 700px; max-width: 80vw;">
         <q-card-section>
           <div class="text-h6">{{pollToSeeResult.question}}</div>
         </q-card-section>

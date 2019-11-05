@@ -14,6 +14,11 @@
         <q-toolbar-title>
           Poll App
         </q-toolbar-title>
+        <q-btn 
+          @click="addPoll" 
+          push color="white" 
+          text-color="primary" 
+          label="Add Poll" />
       </q-toolbar>
     </q-header>
 
@@ -43,6 +48,10 @@
       </q-list>
     </q-drawer>
 
+    <q-dialog v-model="showAddPoll">
+      <add-poll />
+    </q-dialog>
+
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -51,9 +60,21 @@
 
 <script>
 export default {
+  components: {
+    'add-poll': require('../components/AddPoll.vue').default
+  },
   data () {
     return {
-      leftDrawerOpen: false
+      leftDrawerOpen: false,
+      showAddPoll: false
+    }
+  },
+  methods: {
+    addPoll() {
+      // TODO: Some input validations required
+      // TODO: Add poll to the vuex store
+      this.showAddPoll = true
+      this.optionsCount = 2
     }
   }
 }

@@ -60,7 +60,10 @@ module.exports = function (ctx) {
         'QCardSection',
         'QCardActions',
         'QSpace',
-        'QDialog'
+        'QDialog',
+        'QBar',
+        'QTooltip',
+        'QInput'
       ],
 
       directives: [
@@ -69,7 +72,9 @@ module.exports = function (ctx) {
       ],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Dialog'
+      ]
     },
 
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
