@@ -7,20 +7,20 @@
 
     <q-card-actions vertical align="left">
       <q-btn
-      @click="vote(id, option.id)" 
-      v-for="(option, index) in options"
-      :key="index" 
-      flat
-      no-caps 
+        @click="vote(id, option.id)"
+        v-for="(option, index) in options"
+        :key="index"
+        flat
+        no-caps
       >
       {{option.value}}
       </q-btn>
     </q-card-actions>
     <div class="text-center absolute-bottom">
-      <q-btn 
+      <q-btn
         @click="$emit('showResult')"
-        no-caps 
-        class="q-mb-sm" 
+        no-caps
+        class="q-mb-sm"
         outline color="primary"
       >
       Show Results
@@ -45,7 +45,7 @@ export default {
       const payload = {
         pollId: pollId,
         optionId: optionId
-      }
+      };
       this.updatePoll(payload)
     }
   }

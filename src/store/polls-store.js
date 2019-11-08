@@ -36,7 +36,7 @@ const state = {
     },
     {
       id: 3,
-      creator: "Nasim Bagheri",
+      creator: "Ali Kareshki",
       question: "Did you eat lunch?",
       options: [
         {
@@ -86,24 +86,31 @@ const state = {
       ]
     }
   ]
-}
+};
 
 const mutations = {
   updatePoll(state, payload) {
-    const poll = state.polls[payload.pollId - 1]
+    const poll = state.polls[payload.pollId - 1];
     poll.options[payload.optionId - 1].counter++
+  },
+  addPoll: function (state, poll) {
+    poll.id = state.polls.length + 1;
+    state.polls.push(poll)
   }
-}
+};
 
 const actions = {
   updatePoll({ commit }, payload) {
     commit('updatePoll', payload)
+  },
+  addPoll({ commit }, poll) {
+    commit('addPoll', poll)
   }
-}
+};
 
 const getters = {
   polls: () => state.polls
-}
+};
 
 export default {
   namespaced: true,
